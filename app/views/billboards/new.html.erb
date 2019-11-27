@@ -1,2 +1,4 @@
-<h1>Billboards#new</h1>
-<p>Find me in app/views/billboards/new.html.erb</p>
+h1><%= @billboard.name %></h1>
+<hr />
+
+<h2><%= link_to "Add a Artist", new_billboard_artist_path(@billboard) %></h2>
