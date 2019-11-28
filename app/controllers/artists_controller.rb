@@ -28,8 +28,8 @@ class ArtistsController < ApplicationController
   end
 
   def update
-  	if @artist.update
-  		redirect_to @artist
+  	if @artist.update(artist_params)
+  		redirect_to [@billboard, @artist]
   	else
   		render :edit
   	end
