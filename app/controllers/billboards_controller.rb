@@ -20,7 +20,7 @@ class BillboardsController < ApplicationController
   	if @billboard.save
   		redirect_to billboards_path
   	else
-  		render :new
+  		render partial: 'form'
   	end
   end
 

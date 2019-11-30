@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
   	if @artist.save
   		redirect_to [@billboard, @artist]
   	else
-  		render :new
+  		render partial: 'form'
   	end
   end
 
@@ -31,7 +31,7 @@ class ArtistsController < ApplicationController
   	if @artist.update(artist_params)
   		redirect_to [@billboard, @artist]
   	else
-  		render :edit
+  		render partial: 'form'
   	end
   end
 
