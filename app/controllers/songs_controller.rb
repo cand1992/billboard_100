@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   	if @song.save
   		redirect_to [@artist, @song]
   	else
-  		render :new
+  		render partial: 'form'
   	end
   end
 
@@ -31,7 +31,7 @@ class SongsController < ApplicationController
   	if @song.update(song_params)
   		redirect_to [@artist, @song]
   	else
-  		render :edit
+  		render partial: 'form'
   	end
   end
 
