@@ -1,12 +1,11 @@
-<h1><%= @billboard.name %></h1>
-<h3><%= link_to "Back to the Billboard charts", root_path %></h3>
-<hr /> 
-<h2><%= link_to 'Add Artist', new_billboard_artist_path(@billboard) %></h2>
-
+<h1>Artists</h1>
+<%= link_to 'Create Artist', new_billboard_artist_path(@billboard) %>
 <ul>
-  <% @artists.each do |artist| %>
-    <li>
-      <%= link_to artist.name, [@billboard, artist] %>
-    </li>
-  <% end %>
+	<% @artists.each do |artist| %>
+		<li>
+			<%= link_to artist.name, [@billboard, artist] %>
+		</li>
+	<% end %>
 </ul>
+<br />
+<%= link_to "Back to #{@billboard.name}", billboard_path(@billboard) %>

@@ -1,17 +1,10 @@
-<h1><%= @artist.name %></h1>
-<hr /> 
-<h6><%= link_to "Back to the Billboard charts", root_path %></h6>
-
-<h2><%= link_to 'Add A Song', new_artist_song_path(@artist) %></h2>
-
+<h1><%= @artist.name %> Songs</h1>
+<%= link_to 'Add Song', new_artist_song_path(@artist) %>
 <ul>
-  <% @songs.each do |song| %>
-    <li>
-      <%= link_to song.name, [@artist, song] %>
-    </li>
-  <% end %>
+	<% @songs.each do |song| %>
+		<li>
+			<%= link_to song.name, [@artist, song] %>
+		</li>
+	<% end %>
 </ul>
-
-
-
-
+<%= link_to "Back to #{@artist.name}", billboard_artist_path(@artist.billboard_id,@artist) %>

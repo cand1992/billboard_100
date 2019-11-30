@@ -1,8 +1,7 @@
-<h1><%= @artist.id ? 'Edit Artist' : 'Add Artist' %></h1>
-
-<%= form_for [@billboard,@artist] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
-
-  <%= f.submit %>
+<h1><%= @artist.id ? 'Edit Artist' : 'Create Artist' %></h1>
+<%= form_for [@billboard, @artist] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true %>
+	<br />
+	<%= f.submit %>
 <% end %>
