@@ -1,2 +1,12 @@
-<h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
+<h1><%= @billboard.name %></h1>
+<h3><%= link_to "Back to the Billboard charts", root_path %></h3>
+<hr /> 
+<h2><%= link_to 'Add Artist', new_billboard_artist_path(@billboard) %></h2>
+
+<ul>
+  <% @artists.each do |artist| %>
+    <li>
+      <%= link_to artist.name, [@billboard, artist] %>
+    </li>
+  <% end %>
+</ul>

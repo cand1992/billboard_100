@@ -1,6 +1,9 @@
 <h1><%= @billboard.name %></h1>
+<h3><%= link_to "Back to the Billboard charts", root_path %></h3>
 <hr />
 
-<h2><%= link_to "Add a Artist", new_billboard_artist_path(@billboard) %></h2>
+
+<%= link_to "View Artist", billboard_artists_path(@billboard) %>
+<%= link_to "Edit Billboard", edit_billboard_path(@billboard) %>
 <%= link_to 'Delete Billboard', @billboard, method: :delete %>
   
