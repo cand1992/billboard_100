@@ -42,6 +42,12 @@ class BillboardsController < ApplicationController
   	redirect_to root_path
   end
 
+  def destroy
+    @billboard.destroy 
+    redirect_to root_path
+  end
+
+
   private
 
   def billboard_params
@@ -50,6 +56,10 @@ class BillboardsController < ApplicationController
 
   def set_billboard
   	@billboard = Billboard.find(params[:id])
+  end
+
+  def billboard_params
+    params.require(:billboard).permit(:name)
   end
 
 end

@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   end
 
   def show
+  	# before_action set_billboard to get the ID
   end
 
   def new

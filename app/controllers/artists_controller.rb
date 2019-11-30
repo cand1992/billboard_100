@@ -1,12 +1,15 @@
 class ArtistsController < ApplicationController
+
 	before_action :set_billboard
 	before_action :set_artist, only: [ :show, :update, :edit, :destroy ]
+
 
   def index
   	@artists = @billboard.artists
   end
 
   def show
+  	# before_action set_billboard to get the ID
   end
 
   def new
@@ -54,3 +57,6 @@ class ArtistsController < ApplicationController
   end
 
 end
+
+
+
